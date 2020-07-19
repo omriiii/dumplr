@@ -38,7 +38,8 @@ btn_outer.addEventListener("click", async function()
 		
 			if(last_post_id != top_post_id)
 			{
-				var post_button = upper_post.getElementsByClassName("KeFJu")[7];
+				var buttons = upper_post.getElementsByClassName("KeFJu")
+				var post_button = buttons[buttons.length-1];
 				post_button.click();
         
 				await sleep(250);
