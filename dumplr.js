@@ -5,13 +5,18 @@ var btn_inner = document.createElement("div");
 btn_inner.classList.add("control-item");
 btn_inner.classList.add("control-anchor");
 btn_inner.classList.add("customize");
-btn_inner.innerHTML = "◆ Post all posts from drafts ᕦ(ò_óˇ)ᕤ";   
+btn_inner.innerHTML = "Post everything ᕦ(ò_óˇ)ᕤ";   
 btn_inner.style.cursor = "pointer";
 
 btn_outer.classList.add("controls_section_item")
 btn_outer.appendChild(btn_inner);
 
-document.getElementsByClassName("blog_menu")[0].appendChild(btn_outer);
+var aside = document.getElementsByClassName("blog_menu")
+if (aside.length == 0)
+{
+  aside = document.getElementsByClassName("_27qMJ")
+}
+aside[0].appendChild(btn_outer);
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
