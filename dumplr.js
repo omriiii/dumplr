@@ -1,3 +1,4 @@
+
 var btn_outer = document.createElement("li");
 var btn_inner = document.createElement("div");
 
@@ -29,16 +30,22 @@ btn_outer.addEventListener("click", async function()
 		var last_post_id = null;
 		var top_post_id = null;
 		
-		while(document.getElementsByClassName("publish").length > 0)
+		while(document.getElementsByClassName("KeFJu").length > 0)
 		{
-			var top_post_id = document.getElementsByClassName("post_full")[1].getAttribute("id");
+			var posts = document.getElementsByClassName("_2jOH-");
+			var upper_post = posts[0];
+			var top_post_id = upper_post.getAttribute("data-id");
 		
 			if(last_post_id != top_post_id)
 			{
-				var publish_buttons = document.getElementsByClassName("publish")[0];
-				publish_buttons.click();
+				var post_button = upper_post.getElementsByClassName("KeFJu")[7];
+				post_button.click();
+        
 				await sleep(250);
-				var publish_btn = document.getElementsByClassName("btn_1")[0];
+				
+				var verify_post_prompt = document.getElementsByClassName("_18SLV")[0];
+				var publish_btn = verify_post_prompt.getElementsByClassName("rW5mf")[0];
+        
 				publish_btn.click();
 				last_post_id = top_post_id
 			}
