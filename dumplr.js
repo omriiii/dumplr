@@ -30,27 +30,26 @@ btn_outer.addEventListener("click", async function()
 		var last_post_id = null;
 		var top_post_id = null;
 		
-		while(document.getElementsByClassName("KeFJu").length > 0)
+		console.log(document.getElementsByClassName("rZlUD").length);
+		while(document.getElementsByClassName("rZlUD").length > 0)
 		{
-			var posts = document.getElementsByClassName("_2jOH-");
+			var posts = document.getElementsByClassName("rZlUD");
 			var upper_post = posts[0];
-			var top_post_id = upper_post.getAttribute("data-id");
-		
+			var top_post_id = upper_post.getAttribute("data-cell-id");
+	
 			if(last_post_id != top_post_id)
 			{
-				var buttons = upper_post.getElementsByClassName("KeFJu")
-				var post_button = buttons[buttons.length-1];
+				var post_button = document.querySelector('[aria-label="Post"]');
 				post_button.click();
-        
+	
 				await sleep(250);
 				
-				var verify_post_prompt = document.getElementsByClassName("_18SLV")[0];
-				var publish_btn = verify_post_prompt.getElementsByClassName("rW5mf")[0];
-        
+				var publish_btn = document.querySelector('[aria-label="OK"]');
 				publish_btn.click();
+				
 				last_post_id = top_post_id
 			}
-			
+	
 			await sleep(150);
 		}
 	}
